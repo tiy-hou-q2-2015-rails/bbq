@@ -8,9 +8,20 @@
 </head>
 <body>
 
-  <%= link_to 'Home', root_path %>
+  <article>
 
-  <%= yield %>
+
+      <% @pages.each do |page_name| %>
+        <div class="bbq_list_item">
+          <%= link_to page_path(name: page_name) do %>
+            <%= render partial: 'bbq', locals: {bbq_type: page_name} %>
+          <% end %>
+        </div>
+      <% end %>
+      <br clear="all"/>
+
+    <%= yield %>
+  </article>
 
 </body>
 </html>

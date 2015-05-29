@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
   root 'pages#list'
 
-  get '/brisket' => 'pages#brisket', as: :brisket
-
-  get '/turkey' => 'pages#turkey', as: :turkey
-
-  get '/ribs' => 'pages#ribs', as: :ribs
-
-  get '/veggies' => 'pages#veggies', as: :veggies
+  get '/:name' => 'pages#show', as: :page
+  # 
+  # get '/brisket' => 'pages#brisket', as: :brisket
+  #
+  # get '/turkey' => 'pages#turkey', as: :turkey
+  #
+  # get '/ribs' => 'pages#ribs', as: :ribs
+  #
+  # get '/veggies' => 'pages#veggies', as: :veggies
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
